@@ -1,0 +1,163 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #1a1e2a;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.container-1 .text{
+  color: #545868;
+  display: flex;
+  margin-top: 80px;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  text-shadow: 2px 3px black;
+}
+
+/*---- CRUELLA ANIMATED ----*/
+
+.cardzao{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.cardzao .card{
+  position: relative;
+  width: 600px;
+  height: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.cardzao .card .circle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.cardzao .card .circle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #52031a;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+.cardzao:hover .card .circle:before{
+  background-color: #13161F;
+  clip-path: circle(400px at center);
+}
+
+.cardzao img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.cardzao:hover img{
+  left: 80%;
+  height: 550px;
+}
+
+.cardzao .text{
+  position: relative;
+  width: 50%;
+  left: 20%;
+  padding: 20px 20px 20px 40px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.cardzao:hover .text{
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.cardzao .text p{
+  color: white;
+}
+
+.cardzao .text a{
+  padding: 20px 100px;
+  margin: 10px 0;
+  color: azure;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #55051d, #310210);
+  display: inline-block;
+  font-weight: 700;
+}
+
+@media (max-width: 991px){
+  .cardzao{
+    margin-left: 70px;
+    width: auto;
+    height: 550px;
+    max-width: 350px;
+    align-items: flex-start;
+  }
+
+  .cardzao .card{
+    height: 600px;
+  }
+
+  .cardzao:hover{
+    height: 600px;
+  }
+
+  .cardzao .text{
+    width: 100%;
+    left: 0px;
+    padding: 30px;
+  }
+
+  .cardzao img{
+    width: 430px;
+  }
+
+  .cardzao:hover img{
+    top: 70%;
+    left: 50%;
+    height: 430px;
+  }
+}
+
+@media (max-width: 420px){
+  .cardzao .text{
+    padding: 20px;
+  }
+}
